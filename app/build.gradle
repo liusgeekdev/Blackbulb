@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+
+android {
+	compileSdkVersion rootProject.ext.targetSdkVersion
+	buildToolsVersion rootProject.ext.buildToolsVersion
+
+	defaultConfig {
+		applicationId "info.papdt.blackblub"
+		minSdkVersion rootProject.ext.minSdkVersion
+		targetSdkVersion rootProject.ext.targetSdkVersion
+		versionCode 17
+		versionName '2.1.1'
+	}
+
+	compileOptions {
+		sourceCompatibility JavaVersion.VERSION_1_8
+		targetCompatibility JavaVersion.VERSION_1_8
+	}
+
+	buildTypes {
+		release {
+			minifyEnabled false
+			shrinkResources false
+			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+		}
+
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+	}
+}
+
+dependencies {
+	implementation fileTree(dir: 'libs', include: ['*.jar'])
+	implementation 'org.cyanogenmod:platform.sdk:2.0'
+	implementation 'moe.feng:AlipayZeroSdk:1.1'
+	implementation 'moe.shizuku.fontprovider:api:8'
+	implementation project(":libraries:timepicker")
+}

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:id="@+id/root_layout"
+	android:focusable="false"
+	android:foreground="@android:color/transparent"
+	tools:context=".ui.MainActivity">
+
+	<LinearLayout
+		android:id="@+id/card_view"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="?attr/card_background_color"
+		android:layout_marginBottom="16dp"
+		android:padding="8dp"
+		android:clickable="true"
+		android:focusable="false"
+		android:elevation="8dp"
+		android:animateLayoutChanges="true"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:id="@+id/title_bar"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="12dp"
+			android:layout_marginBottom="4dp"
+			android:gravity="center_vertical"
+			android:orientation="horizontal">
+
+			<TextView
+				android:layout_width="0dp"
+				android:layout_weight="1"
+				android:layout_height="wrap_content"
+				android:text="@string/app_name"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:textSize="12sp"
+				android:layout_marginStart="16dp"/>
+
+			<ImageButton
+				android:id="@+id/btn_about"
+				android:layout_width="16dp"
+				android:layout_height="16dp"
+				android:layout_marginEnd="24dp"
+				android:scaleType="centerInside"
+				android:tint="@android:color/darker_gray"
+				android:importantForAccessibility="no"
+				android:background="?android:attr/selectableItemBackgroundBorderless"
+				android:src="@drawable/ic_info_black_24dp"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:id="@+id/basic_bar"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center_vertical"
+			android:orientation="horizontal"
+			android:layout_marginBottom="4dp">
+
+			<ImageButton
+				android:id="@+id/toggle"
+				android:layout_width="24dp"
+				android:layout_height="24dp"
+				android:layout_marginStart="16dp"
+				android:layout_marginTop="16dp"
+				android:layout_marginBottom="16dp"
+				android:layout_marginEnd="8dp"
+				android:background="?android:attr/selectableItemBackgroundBorderless"
+				android:importantForAccessibility="no"
+				android:scaleType="centerInside"
+				android:src="@drawable/ic_brightness_7_black_24dp"
+				android:tint="?attr/icon_tint"/>
+
+			<SeekBar
+				android:id="@+id/seek_bar"
+				android:layout_width="0dp"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:layout_marginEnd="8dp"
+				android:progress="0"
+				android:max="80"/>
+
+			<com.github.zagum.expandicon.ExpandIconView
+				android:id="@+id/expand_icon"
+				android:layout_width="32dp"
+				android:layout_height="32dp"
+				android:layout_marginEnd="16dp"
+				android:background="?android:attr/selectableItemBackgroundBorderless"
+				app:eiv_color="?attr/icon_tint"
+				app:eiv_colorLess="?attr/icon_tint"
+				app:eiv_colorMore="?attr/icon_tint"
+				app:eiv_colorIntermediate="?attr/icon_tint"
+				app:eiv_padding="8dp"/>
+
+		</LinearLayout>
+
+		<TextView
+			android:id="@+id/button_tips"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:padding="16dp"
+			android:background="?attr/icon_tint"
+			android:textColor="@android:color/white"
+			android:text="@string/button_tip_text"/>
+
+		<LinearLayout
+			android:id="@+id/mini_scheduler_info"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="12dp"
+			android:gravity="center_vertical"
+			android:orientation="horizontal">
+
+			<ImageView
+				android:layout_width="16dp"
+				android:layout_height="16dp"
+				android:layout_marginStart="20dp"
+				android:scaleType="centerInside"
+				android:tint="@android:color/darker_gray"
+				android:importantForAccessibility="no"
+				android:src="@drawable/ic_alarm_black_24dp"/>
+
+			<TextView
+				android:id="@+id/mini_scheduler_status_text"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/scheduler_status_on_show_enable_time"
+				android:textAppearance="?android:attr/textAppearanceSmall"
+				android:tint="@android:color/darker_gray"
+				android:layout_marginStart="16dp"
+				android:textSize="12sp"/>
+
+		</LinearLayout>
+
+		<View
+			android:id="@+id/divider_line"
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:background="#97AFAFAF"
+			android:visibility="gone"
+			tools:visibility="visible"/>
+
+		<include
+			android:id="@+id/yellow_filter_row"
+			android:visibility="gone"
+			tools:visibility="visible"
+			layout="@layout/include_yellow_filter_row"/>
+
+		<include
+			android:id="@+id/scheduler_row"
+			android:visibility="gone"
+			tools:visibility="visible"
+			layout="@layout/include_scheduler_row"/>
+
+		<include
+			android:id="@+id/dark_theme_row"
+			android:visibility="gone"
+			tools:visibility="visible"
+			layout="@layout/include_dark_theme_row"/>
+
+		<include
+			android:id="@+id/advanced_mode_row"
+			android:visibility="gone"
+			tools:visibility="visible"
+			layout="@layout/include_advanced_mode_row"/>
+
+	</LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<declare-styleable name="DiagonalLayout">
+		<attr name="diagonal_angle" format="integer" />
+		<attr name="diagonal_handleMargins" format="boolean"/>
+		<attr name="diagonal_position" format="enum">
+			<enum name="left" value="1" />
+			<enum name="right" value="2" />
+			<enum name="bottom" value="4" />
+			<enum name="top" value="8"/>
+		</attr>
+		<attr name="diagonal_direction" format="enum">
+			<enum name="left" value="1" />
+			<enum name="right" value="2" />
+		</attr>
+	</declare-styleable>
+
+	<declare-styleable name="ExpandIconView">
+		<attr name="eiv_roundedCorners" format="boolean"/>
+		<attr name="eiv_switchColor" format="boolean"/>
+		<attr name="eiv_color" format="color"/>
+		<attr name="eiv_colorMore" format="color"/>
+		<attr name="eiv_colorLess" format="color"/>
+		<attr name="eiv_colorIntermediate" format="color"/>
+		<attr name="eiv_animationDuration" format="integer"/>
+		<attr name="eiv_padding" format="dimension"/>
+	</declare-styleable>
+
+	<declare-styleable name="Blackbulb">
+		<attr name="card_background_color" format="color"/>
+		<attr name="progress_bar_color" format="color"/>
+		<attr name="icon_tint" format="color"/>
+		<attr name="overflow_tint" format="color"/>
+	</declare-styleable>
+
+</resources>
